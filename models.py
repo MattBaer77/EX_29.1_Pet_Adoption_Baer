@@ -22,4 +22,4 @@ class Pet(db.Model):
     available = db.Column(db.Boolean, nullable=False, default=True)
 
     def __repr__(self):
-        return f"<Pet {self.id} {self.name} {self.species} {self.available}"
+        return f"<Pet {self.id} {self.name} {self.species} {self.available}>"
