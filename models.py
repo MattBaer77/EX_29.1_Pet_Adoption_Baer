@@ -9,7 +9,7 @@ def connect_db(app):
 
 # MODELS GO BELOW!
 
-class PET(db.Model):
+class Pet(db.Model):
     """Pet Model"""
     __tablename__ = "pets"
 
