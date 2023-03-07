@@ -19,7 +19,7 @@ def home_list_pets():
     """Render home page - a list of pets"""
 
     # Get pets from db
-    all_pets = Pets.query.all()
+    pets = Pet.query.all()
 
     # Pass into template
-    render_template("home.html", pets=all_pets)
+    return render_template("home.html", pets=pets)
