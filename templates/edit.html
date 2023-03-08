@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit Pet:{{pet.id}} {{pet.name}}{% endblock %}
+
+{% block content %}
+
+<div align="center" class="mt-5 mb-5">
+
+    <div class="w-25">
+
+    <div align="start"><h1>{{pet.name}}</h1></div>
+    <img class="w-100 rounded" src="{{pet.photo_url}}" alt="An image of {{pet.name}} the {{pet.species}}">
+    <p class="mb-0">{{pet.name}} - {{pet.species}}</p>
+    <p>Age: {{pet.age}}</p>
+
+    </div>
+
+</div>
+
+<div class="m5" style="height:10px"></div>
+
+<div class="mt-5 mb-5" align="center">
+
+    <div class="w-25">
+
+        <div class="" align="start"><h3>Edit: {{pet.name}}</h3></div>
+
+        <form method="POST" class="">
+
+            {{ form.hidden_tag() }}
+            {% for field in form if field.widget.input_type != 'hidden'%}
+            <div class="form-group" align="start">
+                
+                {{field.label(class_="mt-2")}}
+                {{field(class_="form-control")}}
+            
+                {% for err in field.errors %}
+                {{err}}
+                {% endfor %}
+
+            </div>
+            {% endfor %}
+            <button class="btn btn-primary mt-2">Submit</button>
+
+        </form>
+
+        <a href="/"><button class="btn btn-secondary mt-2">Back</button></a>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
